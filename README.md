@@ -52,11 +52,13 @@ chmod +x scripts/dev.sh
 
 ### Debugging (Zed)
 
-1. Install the .NET extension in Zed (it provides `netcoredbg` adapter)
-2. Start PostgreSQL: `docker compose up -d postgres`
+1. Start PostgreSQL: `docker compose up -d postgres`
+2. Run `./scripts/dev.sh` to ensure `netcoredbg` debug adapter is installed and registered
 3. In Zed, open the Debug panel and select **"Netra.Api (local)"**
-4. Press F5 — Zed builds then attaches the debugger
+4. Press F5 — Zed builds then attaches the debugger at `http://localhost:5000`
 5. Set breakpoints, inspect variables, step through code
+
+> **Prerequisites:** The Zed C# extension must be installed. Run `./scripts/dev.sh` once — it downloads `netcoredbg` and configures it in Zed's settings.
 
 ## Project Structure
 
