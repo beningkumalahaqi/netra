@@ -1,0 +1,25 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.nupkg
+*.log
+*.vs/
+.DS_Store
+
+# Agent files (private project management)
+.agent/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Docker
+docker-data/
+
+# OS
+Thumbs.db
