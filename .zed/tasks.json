@@ -1,0 +1,9 @@
+[
+  {
+    "label": "build",
+    "command": "dotnet build src/Netra.Api/Netra.Api.csproj",
+    "args": [],
+    "tags": [],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  }
+]

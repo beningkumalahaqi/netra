@@ -25,10 +25,38 @@ Project DBs ────────── Platform DB
 
 ## Quick Start
 
+### Option A: Full Docker (easiest)
+
 ```bash
 docker compose up
 curl localhost:5000/health
 ```
+
+### Option B: PostgreSQL in Docker, API locally (recommended for dev)
+
+```bash
+# Start only PostgreSQL
+docker compose up -d postgres
+
+# Run the API with hot reload
+dotnet run --project src/Netra.Api
+# Health check: http://localhost:5000/health
+```
+
+Or use the shortcut:
+
+```bash
+chmod +x scripts/dev.sh
+./scripts/dev.sh
+```
+
+### Debugging (Zed)
+
+1. Install the .NET extension in Zed (it provides `netcoredbg` adapter)
+2. Start PostgreSQL: `docker compose up -d postgres`
+3. In Zed, open the Debug panel and select **"Netra.Api (local)"**
+4. Press F5 — Zed builds then attaches the debugger
+5. Set breakpoints, inspect variables, step through code
 
 ## Project Structure
 
@@ -42,6 +70,20 @@ src/
 tests/
 ├── Netra.UnitTests/
 └── Netra.IntegrationTests/
+```
+
+## Development
+
+```bash
+# Run tests
+dotnet test
+
+# Build
+dotnet build
+
+# Start DB + API locally
+docker compose up -d postgres
+dotnet run --project src/Netra.Api
 ```
 
 ## Roadmap

@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Netra.Api (local)",
+    "adapter": "netcoredbg",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/src/Netra.Api/bin/Debug/net8.0/Netra.Api.dll",
+    "cwd": "$ZED_WORKTREE_ROOT/src/Netra.Api",
+    "stopAtEntry": false,
+    "env": {
+      "ASPNETCORE_ENVIRONMENT": "Development",
+      "ASPNETCORE_URLS": "http://localhost:5000"
+    },
+    "build": {
+      "command": "dotnet",
+      "args": ["build", "src/Netra.Api/Netra.Api.csproj", "-c", "Debug"]
+    }
+  }
+]
